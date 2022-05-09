@@ -7,3 +7,11 @@ Each custom component ideally should have its own folder inside of the component
 This makes it easy to find code related to specific components. Alternatively, if you no longer need a component you can then delete the entire folder and remove all the code attached to the component.
 
 You can also group components together under a common folder.
+
+// step one find click to get all characters
+//steptwo click
+
+// step three find morty smith
+// step four click morty smith
+
+//step five find Human

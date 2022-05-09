@@ -14,12 +14,12 @@ describe('this is a test for linking pages', () => {
       </ContextProvider>
     );
     //1) find main
-    const one = await screen.findByText('Main');
-    //2)click main
-    userEvent.click(one);
+    // const one = await screen.findByText('Main');
+    // //2)click main
+    // userEvent.click(one);
 
     //3 load state test
-    screen.findByText(/loadingpage/i);
+    // await screen.findByText(/loadingpage/i);
 
     //4 find Morty Smith
     const four = await screen.findByText('Morty Smith');
@@ -35,18 +35,12 @@ describe('this is a test for linking pages', () => {
 });
 
 describe('this is a behaviour test', () => {
-  it('testing for working links', async () => {
+  it('testing for working paths', async () => {
     render(
       <ContextProvider>
         <MemoryRouter
           //load an array of url's with ID to choose from.
-          initialEntries={[
-            '/char/1',
-            '/char/2',
-            '/char/3',
-            '/char/4',
-            '/char/5',
-          ]}
+          initialEntries={['/1', '/2', '/3', '/4', '/5']}
           //select character four of the array
           initialIndex={3}
         >
@@ -64,6 +58,6 @@ describe('this is a behaviour test', () => {
     const bethRace = await screen.findByText('Human');
     expect(bethRace).toBeInTheDocument();
 
-    screen.debug();
+    // screen.debug();
   });
 });
