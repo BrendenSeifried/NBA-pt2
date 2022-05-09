@@ -6,7 +6,6 @@ import { useBasicContext } from '../context/BasicContext';
 import { fetchAllCharacters } from '../services/fetch';
 
 export default function LandingPage() {
-  // const [data, setData] = useState([]);
   const { data, setData } = useBasicContext();
   const [load, setLoad] = useState(true);
   const { url, path } = useRouteMatch();

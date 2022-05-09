@@ -37,13 +37,33 @@ describe('this is a test for linking pages', () => {
 describe('this is a behaviour test', () => {
   it('testing for working links', async () => {
     render(
-      <MemoryRouter
-        initialEntries={['1/', '/2', '/3', '/4', '/5']}
-        initialIndex={4}
-      >
-        <App />
-      </MemoryRouter>
+      <ContextProvider>
+        <MemoryRouter
+          //load an array of url's with ID to choose from.
+          initialEntries={[
+            '/char/1',
+            '/char/2',
+            '/char/3',
+            '/char/4',
+            '/char/5',
+          ]}
+          //select character four of the array
+          initialIndex={3}
+        >
+          <App />
+        </MemoryRouter>
+      </ContextProvider>
     );
+    // test and check that all parameters of Beth Smith are met
+    const bethName = await screen.findByText('Beth Smith');
+    expect(bethName).toBeInTheDocument();
+
+    const bethGender = await screen.findByText('Female');
+    expect(bethGender).toBeInTheDocument();
+
+    const bethRace = await screen.findByText('Human');
+    expect(bethRace).toBeInTheDocument();
+
     screen.debug();
   });
 });

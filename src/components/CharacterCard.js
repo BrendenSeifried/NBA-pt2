@@ -6,7 +6,6 @@ import { fetchRickandMorty } from '../services/fetch';
 export default function CharacterCard() {
   const { id } = useParams();
   const { person, setPerson } = useBasicContext();
-  // const [person, setPerson] = useState({});
   const history = useHistory('');
 
   useEffect(() => {
