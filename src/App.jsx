@@ -1,3 +1,17 @@
+import { Route, Switch } from 'react-router-dom/';
+import LandingPage from './views/LandingPage';
+import Main from './views/Main';
+
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <Switch>
+      <Route path="/char">
+        <LandingPage />
+      </Route>
+
+      <Route path="/">
+        <Main />
+      </Route>
+    </Switch>
+  );
 }
