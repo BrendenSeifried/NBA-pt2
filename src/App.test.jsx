@@ -19,6 +19,7 @@ describe('this is a test for linking pages', () => {
     userEvent.click(one);
 
     //3 load state test
+    // screen.getByText(/loadingpage/i);
     screen.findByText(/loadingpage/i);
 
     //4 find Morty Smith
