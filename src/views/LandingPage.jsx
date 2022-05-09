@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Route } from 'react-router-dom/';
-import { useLocation, useParams, useRouteMatch } from 'react-router-dom/';
+import { useRouteMatch } from 'react-router-dom/';
 import CharacterCard from '../components/CharacterCard';
+import { useBasicContext } from '../context/BasicContext';
 import { fetchAllCharacters } from '../services/fetch';
 
 export default function LandingPage() {
-  const [data, setData] = useState([]);
+  //   const [data, setData] = useState([]);
+  const { data, setData } = useBasicContext();
   const [load, setLoad] = useState(true);
   const { url, path } = useRouteMatch();
-  const location = useLocation();
-
-  console.log(location);
 
   useEffect(() => {
     const fetchEveryone = async () => {
