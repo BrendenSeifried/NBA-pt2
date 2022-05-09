@@ -25,12 +25,12 @@ export default function LandingPage() {
     <>
       {data.map((character) => (
         <article key={character.id}>
-          <Link to={`${url}${character.id}`}>
+          <Link to={`${url}/${character.id}`}>
             <h1>{character.name}</h1>
           </Link>
         </article>
       ))}
-      <Route path={`${path}:id`}>
+      <Route path={`${path}/:id`}>
         <CharacterCard />
       </Route>
     </>

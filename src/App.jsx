@@ -5,13 +5,13 @@ import Main from './views/Main';
 export default function App() {
   return (
     <Switch>
-      <Route path="/">
+      <Route path="/char">
         <LandingPage />
       </Route>
 
-      {/* <Route path="/">
+      <Route path="/">
         <Main />
-      </Route> */}
+      </Route>
     </Switch>
   );
 }
