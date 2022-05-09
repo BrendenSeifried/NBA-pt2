@@ -15,9 +15,17 @@ export default function CharacterCard() {
     fetchChar();
   }, [id]);
 
+  const close = async () => {
+    history.push('/char');
+  };
+
   return (
     <article>
       <img alt={`${person.name}`} src={person.image} />
+      <h1>Name: {person.name}</h1>
+      <p>{person.species}</p>
+      <p>{person.gender}</p>
+      <button onClick={close}>Close View</button>
     </article>
   );
 }
