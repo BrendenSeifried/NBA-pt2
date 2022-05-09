@@ -9,9 +9,6 @@ export default function LandingPage() {
   const [load, setLoad] = useState(true);
   const { url, path } = useRouteMatch();
 
-  console.log(url);
-  console.log(path);
-
   useEffect(() => {
     const fetchEveryone = async () => {
       const resp = await fetchAllCharacters();
@@ -25,10 +22,10 @@ export default function LandingPage() {
 
   return (
     <>
-      {data.map((item) => (
-        <article key={item.id}>
-          <Link to={`${url}/${item.id}`}>
-            <h1>{item.name}</h1>
+      {data.map((character) => (
+        <article key={character.id}>
+          <Link to={`${url}/${character.id}`}>
+            <h1>{character.name}</h1>
           </Link>
         </article>
       ))}
