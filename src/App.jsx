@@ -3,10 +3,8 @@ import LandingPage from './views/LandingPage';
 import Main from './views/Main';
 
 export default function App() {
-
   return (
     <Switch>
-
       <Route path="/char">
         <LandingPage />
       </Route>

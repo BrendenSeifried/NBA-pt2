@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import { useBasicContext } from '../context/BasicContext';
 import { fetchRickandMorty } from '../services/fetch';
 
 export default function CharacterCard() {
   const { id } = useParams();
-  const [person, setPerson] = useState({});
+  const { person, setPerson } = useBasicContext();
+  // const [person, setPerson] = useState({});
   const history = useHistory('');
 
   useEffect(() => {

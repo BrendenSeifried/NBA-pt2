@@ -4,9 +4,10 @@ const BasicContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [person, setPerson] = useState({});
 
   return (
-    <BasicContext.Provider value={{ data, setData }}>
+    <BasicContext.Provider value={{ data, setData, person, setPerson }}>
       {children}
     </BasicContext.Provider>
   );
